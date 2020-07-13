@@ -1,0 +1,23 @@
+body{
+    background-color: #292929;
+}
+
+#starselect{
+    text-align: center;
+    color:white;
+}
+
+#optionsel{
+    text-align: center;
+    margin-right: 1em;
+    color: white;
+}
+
+#sktable{
+    text-align: center;
+    color: white;
+}
+
+#tablepair{
+    text-align: center;
+}
