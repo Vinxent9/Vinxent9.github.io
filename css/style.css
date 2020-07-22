@@ -5,6 +5,7 @@ body{
 #starselect{
     text-align: center;
     color:white;
+    margin: auto;
 }
 
 #optionsel{
@@ -20,4 +21,9 @@ body{
 
 #tablepair{
     text-align: center;
+}
+
+#centering{
+    text-align: center;
+    margin: auto;
 }
