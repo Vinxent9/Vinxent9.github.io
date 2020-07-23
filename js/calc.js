@@ -20,7 +20,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 		}
 		else{ //star name
 			star_name = star_data[index][0];
-			$("#star_image" + id_num).attr("src","asset/" + star_name + ".png");  //set src of corresponding img element with corresponding name picture
+			$("#star_image" + id_num).attr("src","asset/x2/" + star_name + ".png");  //set src of corresponding img element with corresponding name picture
 			$("#star_image" + id_num).prop("alt", star_name);  //set text of image when image not loading
 		}
 		
