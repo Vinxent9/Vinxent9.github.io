@@ -372,7 +372,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 
 		//for star 1 each level
 		s1 = 0;
-		s1_table = "<div class='card bg-light'><div class='card-header bg-warning'> <center><i class='fas fa-table'></i> <strong> Star 1 Pair Details </strong> </center></div><div class='card-body bg-dark'><table class = 'table table-striped  table-sm table-dark' id='tablepair' ><tr><th><font color = '" + color1 + "'>" + star1_name + "</font></th><th><font color = '" + color2 + "'>" + star2_name + "</font></th><th>30 Seconds</th><th>60 Seconds</th><th>90 Seconds</th><th>120 Seconds</th><th>150 Seconds</th><th>180 Seconds</th><th>AVE%</th></tr>";
+		s1_table = "<div class='card bg-light'><div class='card-header bg-warning'> <div id='centering'><i class='fas fa-table'></i> <strong> Star 1 Pair Details </strong> </div></div><div class='card-body bg-dark'><table class = 'table table-striped  table-sm table-dark' id='tablepair' ><tr><th><font color = '" + color1 + "'>" + star1_name + "</font></th><th><font color = '" + color2 + "'>" + star2_name + "</font></th><th>30 Seconds</th><th>60 Seconds</th><th>90 Seconds</th><th>120 Seconds</th><th>150 Seconds</th><th>180 Seconds</th><th>AVE%</th></tr>";
 		while(s1 < 100){
 			s1_highest = 0;
 			s1_index = 0;
@@ -400,7 +400,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 
 		//for star 2 each level
 		s2 = 0;
-		s2_table = "<div class='card bg-light'><div class='card-header bg-warning'> <center><i class='fas fa-table'></i><strong> Star 2 Pair Details </strong></center> </div><div class='card-body bg-dark'><table class = 'table table-striped  table-sm table-dark' id='tablepair'><tr><th><font color = '" + color2 + "'>" + star2_name + "</font></th><th><font color = '" + color1 + "'>" + star1_name + "</font></th><th>30 Seconds</th><th>60 Seconds</th><th>90 Seconds</th><th>120 Seconds</th><th>150 Seconds</th><th>180 Seconds</th><th>AVE%</th></tr>";
+		s2_table = "<div class='card bg-light'><div class='card-header bg-warning'> <div id='centering'><i class='fas fa-table'></i><strong> Star 2 Pair Details </strong></div> </div><div class='card-body bg-dark'><table class = 'table table-striped  table-sm table-dark' id='tablepair'><tr><th><font color = '" + color2 + "'>" + star2_name + "</font></th><th><font color = '" + color1 + "'>" + star1_name + "</font></th><th>30 Seconds</th><th>60 Seconds</th><th>90 Seconds</th><th>120 Seconds</th><th>150 Seconds</th><th>180 Seconds</th><th>AVE%</th></tr>";
 		
 		while(s2 < 10){
 			s2_highest = 0;
@@ -437,7 +437,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 		result_div.innerHTML = "";
 		result_div.innerHTML += results;
 
-		result_div.innerHTML += "<br><br><center><h3 style=color:#ffffff>Best Pair per Each Level</h3><table width='100%'><tr><td>" + s1_table + "<br></td><tr><td>" + s2_table + "</td></tr></center></table>";
+		result_div.innerHTML += "<br><br><div id='centering'><h3 style=color:#ffffff>Best Pair per Each Level</h3><table width='100%'><tr><td>" + s1_table + "<br></td><tr><td>" + s2_table + "</td></tr></div></table>";
 	
 
 
@@ -445,7 +445,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 		//for star 1 each level (custom)
 		if(custom_time > 0 && custom_time <= 180){
 			s1 = 0;
-			s1_table = "<div class='card'><div class='card-header bg-warning'> <center><i class='fas fa-table'></i><strong> Star 1 Pair Details </strong></center> </div><div class='card-body bg-dark'><table class = 'table table-striped  table-sm table-dark' id='tablepair'><tr><th><font color = '" + color1 + "'>" + star1_name + "</font></th><th><font color = '" + color2 + "'>" + star2_name + "</font></th><th>" + custom_time + " Seconds</th><th>AVE%</th></tr>";
+			s1_table = "<div class='card'><div class='card-header bg-warning'> <div id ='centering'><i class='fas fa-table'></i><strong> Star 1 Pair Details </strong></div> </div><div class='card-body bg-dark'><table class = 'table table-striped  table-sm table-dark' id='tablepair'><tr><th><font color = '" + color1 + "'>" + star1_name + "</font></th><th><font color = '" + color2 + "'>" + star2_name + "</font></th><th>" + custom_time + " Seconds</th><th>AVE%</th></tr>";
 			while(s1 < 100){
 				s1_highest = 0;
 				s1_index = 0;
@@ -473,7 +473,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 
 			//for star 2 each level (custom)
 			s2 = 0;
-			s2_table = "<div class='card'><div class='card-header bg-warning'> <center><i class='fas fa-table'></i><strong> Star 2 Pair Details </strong></center> </div><div class='card-body bg-dark'><table table class = 'table table-striped  table-sm table-dark' id='tablepair'><tr><th><font color = '" + color2 + "'>" + star2_name + "</font></th><th><font color = '" + color1 + "'>" + star1_name + "</font></th><th>" + custom_time + " Seconds</th><th>AVE%</th></tr>";
+			s2_table = "<div class='card'><div class='card-header bg-warning'> <div id='centering'><i class='fas fa-table'></i><strong> Star 2 Pair Details </strong></div> </div><div class='card-body bg-dark'><table table class = 'table table-striped  table-sm table-dark' id='tablepair'><tr><th><font color = '" + color2 + "'>" + star2_name + "</font></th><th><font color = '" + color1 + "'>" + star1_name + "</font></th><th>" + custom_time + " Seconds</th><th>AVE%</th></tr>";
 			
 			while(s2 < 10){
 				s2_highest = 0;
@@ -502,7 +502,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 			s2_table += "</table></div></div>";
 
 
-			result_div.innerHTML += "<br><br><center><h3 style=color:#ffffff >Best Pair per Each Level (" + custom_time + " seconds)</h3></center><table width='100%'><tr><td>" + s1_table + "</td><td>" + s2_table + "</td></table>";
+			result_div.innerHTML += "<br><br><div id='centering'><h3 style=color:#ffffff >Best Pair per Each Level (" + custom_time + " seconds)</h3></div><table width='100%'><tr><td>" + s1_table + "</td><td>" + s2_table + "</td></table>";
 	
 
 		}
@@ -514,7 +514,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 		//all results
 		//for star 1 each level
 		s1 = 0;
-		s1_table = "<div class='card'><div class='card-header bg-warning'> <center><i class='fas fa-poll'></i><strong> All Results </strong></center> </div><div class='card-body bg-dark'><table class = 'table table-striped  table-sm table-dark' id='all_results' style=text-align:center><tr><th onclick='sortTable2(0);'><font color = '" + color1 + "'>" + star1_name + "</font></th><th onclick='sortTable2(1);'><font color = '" + color2 + "'>" + star2_name + "</font></th><th onclick='sortTable(2);'>30 Seconds</th><th onclick='sortTable(3);'>60 Seconds</th><th onclick='sortTable(4);'>90 Seconds</th><th onclick='sortTable(5)'>120 Seconds</th><th onclick='sortTable(6)'>150 Seconds</th><th onclick='sortTable(7)'>180 Seconds</th><th onclick='sortTable2(6);'>AVE%</th></tr>";
+		s1_table = "<div class='card'><div class='card-header bg-warning'> <div id='centering'><i class='fas fa-poll'></i><strong> All Results </strong></div> </div><div class='card-body bg-dark'><table class = 'table table-striped  table-sm table-dark' id='all_results' style=text-align:center><tr><th onclick='sortTable2(0);'><font color = '" + color1 + "'>" + star1_name + "</font></th><th onclick='sortTable2(1);'><font color = '" + color2 + "'>" + star2_name + "</font></th><th onclick='sortTable(2);'>30 Seconds</th><th onclick='sortTable(3);'>60 Seconds</th><th onclick='sortTable(4);'>90 Seconds</th><th onclick='sortTable(5)'>120 Seconds</th><th onclick='sortTable(6)'>150 Seconds</th><th onclick='sortTable(7)'>180 Seconds</th><th onclick='sortTable2(6);'>AVE%</th></tr>";
 		while(s1 < 100){
 			for(s = 0; s < 10; s++){	
 				s1_level = (Math.floor(s1 / 10) ) + 1;
