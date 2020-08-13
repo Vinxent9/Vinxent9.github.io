@@ -151,9 +151,9 @@
 				    myChart.data.datasets[0].hoverBorderColor = 'rgba(54, 162, 235, 1)';
 				    break;
 				  case "Session":
-				    myChart.data.datasets[0].backgroundColor = 'rgba(75, 192, 192, 0.2)';
-				    myChart.data.datasets[0].borderColor = 'rgba(75, 192, 192, 1)';
-				    myChart.data.datasets[0].hoverBorderColor = 'rgba(75, 192, 192, 1)';
+				    myChart.data.datasets[0].backgroundColor = 'rgba(165, 214, 167, 0.2)';
+				    myChart.data.datasets[0].borderColor = 'rgba(165, 214, 167, 1)';
+				    myChart.data.datasets[0].hoverBorderColor = 'rgba(165, 214, 167, 1)';
 				    break;
 				  default:
 				}
