@@ -1,3 +1,207 @@
+	
+
+				var ctx = document.getElementById('myChart').getContext('2d');
+				var label_time = new Array();
+				for(var i=0;i<181;i++){
+					label_time.push(i.toString());
+				}
+
+				//rgba(255, 99, 132, 0.2)
+				//rgba(255, 99, 132, 1)
+				//rgba(54, 162, 235, 0.2)
+				//rgba(54, 162, 235, 1)
+				//rgba(75, 192, 192, 0.2)
+				//rgba(75, 192, 192, 1)
+				
+ 	
+				var myChart = new Chart(ctx, {
+				    type: 'bar',
+				    data: {
+				        labels: label_time,
+				        datasets: [{
+				            label: 'Star 1',
+				            data: [],
+				            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+				            borderColor: 'rgba(255, 99, 132, 1)',
+				            borderWidth: 1
+				        },{
+				            label: 'Star 2',
+				            data: [],
+				            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+				            borderColor:'rgba(54, 162, 235, 1)',
+				            borderWidth: 1
+				        }]
+				    },
+				    options: {
+				        scales: {
+				            yAxes: [{type: 'linear',
+				            stacked: true,
+				                ticks: {
+				                    min: 0,
+							      	max: 2,
+							      	stepSize: 1
+				                }
+				            }]
+				        }
+				    }
+				});
+			
+
+			function refresh_chart(star1_level, star2_level,star1_name,star2_name,type1,type2,calculate=0){
+				$("#line_chart").show();
+				if(current_custom_time > 0){
+					var limit = current_custom_time + 1; 
+				} 
+				else{
+					var limit = 181;	
+				}
+
+
+				//update label array
+				var new_label_time = new Array();
+				for(var i=0;i<limit;i++){
+					new_label_time.push(i.toString());
+				}
+
+				//update chart data
+
+				//star 1
+
+				s1time = new Array(limit-1);
+				for(var x=0; x < star_data.length; x++){
+					if(star_data[x][0] == star1_name){
+						cd_index = star1_level*2;
+						st_index = cd_index - 1;
+						cd = star_data[x][cd_index];
+						st = star_data[x][st_index];
+					}
+				} 
+
+
+				pointer = 0;
+				while(pointer < limit){
+					if(! ((pointer + cd) < limit)){
+						cd = limit - pointer;
+					}
+
+					for(c = 0; c < cd; c++){
+						s1time[pointer+c] = 0;
+					}
+
+					pointer =  pointer + cd;
+
+					if(! ((pointer + st) < limit)){
+						st = limit - pointer;
+					}
+
+					for(s = 0; s < st; s++){
+						s1time[pointer+s] = 1;
+						
+					}
+
+					pointer =  pointer + st;
+
+				}
+
+				//star 2
+				s2time = new Array(limit-1);
+				for(var x=0; x < star_data.length; x++){
+					if(star_data[x][0] == star2_name){
+						cd_index = star2_level*2;
+						st_index = cd_index - 1;
+						cd = star_data[x][cd_index];
+						st = star_data[x][st_index];
+					}
+				} 
+
+				pointer = 0;
+				while(pointer < limit){
+					if(! ((pointer + cd) < limit)){
+						cd = limit - pointer;
+					}
+
+					for(c = 0; c < cd; c++){
+						s2time[pointer+c] = 0;
+					}
+
+					pointer =  pointer + cd;
+
+					if(! ((pointer + st) < limit)){
+						st = limit - pointer;
+					}
+
+					for(s = 0; s < st; s++){
+						s2time[pointer+s] = 2;
+						
+					}
+
+					pointer =  pointer + st;
+
+				}
+
+				switch (type1) {
+				  case "Dancer":
+				    myChart.data.datasets[0].backgroundColor = 'rgba(255, 99, 132, 0.2)';
+				    myChart.data.datasets[0].borderColor = 'rgba(255, 99, 132, 1)';
+				    myChart.data.datasets[0].hoverBorderColor = 'rgba(255, 99, 132, 1)';
+				    break;
+				  case "Vocal":
+				    myChart.data.datasets[0].backgroundColor = 'rgba(54, 162, 235, 0.2)';
+				    myChart.data.datasets[0].borderColor = 'rgba(54, 162, 235, 1)';
+				    myChart.data.datasets[0].hoverBorderColor = 'rgba(54, 162, 235, 1)';
+				    break;
+				  case "Session":
+				    myChart.data.datasets[0].backgroundColor = 'rgba(75, 192, 192, 0.2)';
+				    myChart.data.datasets[0].borderColor = 'rgba(75, 192, 192, 1)';
+				    myChart.data.datasets[0].hoverBorderColor = 'rgba(75, 192, 192, 1)';
+				    break;
+				  default:
+				}
+
+				switch (type2) {
+				  case "Dancer":
+				    myChart.data.datasets[1].backgroundColor = 'rgba(255, 99, 132, 0.2)';
+				    myChart.data.datasets[1].borderColor = 'rgba(255, 99, 132, 1)';
+				    myChart.data.datasets[1].hoverBorderColor = 'rgba(255, 99, 132, 1)';
+				    break;
+				  case "Vocal":
+				    myChart.data.datasets[1].backgroundColor = 'rgba(54, 162, 235, 0.2)';
+				    myChart.data.datasets[1].borderColor = 'rgba(54, 162, 235, 1)';
+				    myChart.data.datasets[1].hoverBorderColor = 'rgba(54, 162, 235, 1)';
+				    break;
+				  case "Session":
+				    myChart.data.datasets[1].backgroundColor = 'rgba(165, 214, 167, 0.2)';
+				    myChart.data.datasets[1].borderColor = 'rgba(165, 214, 167, 1)';
+				    myChart.data.datasets[1].hoverBorderColor = 'rgba(165, 214, 167, 1)';
+				    break;
+				  default:
+				}
+ 				
+    			myChart.data.labels = new_label_time; //label array
+    			myChart.data.datasets[0].label = star1_name + " LV" + star1_level; //star 1 label
+    			myChart.data.datasets[1].label = star2_name + " LV" + star2_level; //star 2 label
+    			myChart.data.datasets[0].data = s1time; //star 1 data
+    			myChart.data.datasets[1].data = s2time; //star 2 data
+
+    			myChart.update(); //update
+
+
+    			//scroll to div
+    			if(calculate != 0){
+    				$('html, body').animate({
+				        scrollTop: $("#line_chart").offset().top
+				    }, 1000);
+    			}
+    			  
+			}
+
+			function show_chart_click(star1_level, star2_level){
+				refresh_chart(star1_level,star2_level,current_star1_name,current_star2_name,current_type1,current_type2,1);
+			}
+
+
+
+
 var ave_per = new Array(100);
 var combo_time = new Array(100);
 for (var i = 0; i < combo_time.length; i++) {
@@ -7,6 +211,12 @@ var combo_time_per = new Array(100);
 for (var i = 0; i < combo_time_per.length; i++) {
   combo_time_per[i] = new Array(7);
 }
+
+var current_star1_name = '';
+var current_star2_name = '';
+var current_type1 = '';
+var current_type2 = '';
+var current_custom_time = 0;
 
 	//new 07/11/2020
 	$('body').on('change', '#star_name1,#star_name2', function(event) {  //change event for the 2 select boxes, use this when dealing with dynamic html elements for jQuery Events
@@ -306,6 +516,14 @@ for (var i = 0; i < combo_time_per.length; i++) {
 		var color2 = "";
 		var custom_time = parseInt(document.getElementById('customTime').value);
 
+		//new for chart
+		current_star1_name = star1_name;
+		current_star2_name = star2_name;
+		current_type1 = type1;
+		current_type2 = type2;
+		current_custom_time = custom_time;
+ 		//end of new
+
 		if(type1 == "Dancer"){
 				color1 = "#EF9A9A";
 			}
@@ -339,11 +557,13 @@ for (var i = 0; i < combo_time_per.length; i++) {
 		star1_level = (Math.floor(index / 10) ) + 1 ;
 		star2_level = (index % 10) + 1;
 		//print results
-		results = "<br><div class='card text-white bg-dark'> <img src='asset/taptoptoolbg_result.jpg' class='card-img-top'><div class='card-body'><p class='h6'>The best possible combination is <b><font color='" + color1 +"'>" + star1_name +  "</font></b> Skill Level <b>" + star1_level + "</b> and <b><font color='" + color2 + "'>" + star2_name + "</font></b> Skill Level <b>" + star2_level + "</b> with an average percentage of <b style=color:#FFE082><i>" + highest + "%</b></i></p><br /></div></div><br>";	
+		results = "<br><div class='card text-white bg-dark'> <img src='asset/taptoptoolbg_result.jpg' class='card-img-top'><div class='card-body'><p class='h6'>The best possible combination is <b><font color='" + color1 +"'>" + star1_name +  "</font></b> Skill Level <b>" + star1_level + "</b> and <b><font color='" + color2 + "'>" + star2_name + "</font></b> Skill Level <b>" + star2_level + "</b> with an average percentage of <b style=color:#FFE082><i>" + highest + "%</b></i></p><br /> <i>Tip : You can click the Average Value to see the detail of corresponding Skill Time </i> <br><br><a class='btn btn-warning rounded-pill' href='javascript:show_chart_click(" + star1_level + "," + star2_level + ")' role='button'><strong>View Skill Time Graph</strong> <i class='fas fa-chart-bar'></i></a> </div></div><br>";	
 		results += "<table class = 'table'><tr><th scope='col' class='bg-warning'>30 Seconds</th><th scope='col' class='bg-warning'>60 Seconds</th><th scope='col' class='bg-warning'>90 Seconds</th><th scope='col' class='bg-warning'>120 Seconds</th><th scope='col' class='bg-warning'>150 Seconds</th><th scope='col' class='bg-warning'>180 Seconds</th></tr>" +
 		"<tr class='table-secondary'><td>" + combo_time[index][0] + " Seconds</td><td>" + combo_time[index][1] + " Seconds</td><td>" + combo_time[index][2] + " Seconds</td><td>" + combo_time[index][3] + " Seconds</td><td>" + combo_time[index][4] + " Seconds</td><td>" + combo_time[index][5] + " Seconds</td></tr>"+
 		"<tr class='table-secondary'><td>" + (combo_time_per[index][0]*100).toFixed(2) + "%</td><td>" + (combo_time_per[index][1]*100).toFixed(2) + "%</td><td>" + (combo_time_per[index][2]*100).toFixed(2) + "%</td><td>" + (combo_time_per[index][3]*100).toFixed(2) + " %</td><td>" + (combo_time_per[index][4]*100).toFixed(2) + " %</td><td>" + (combo_time_per[index][5]*100).toFixed(2) + " %</td> </tr>" +
 		"</table>";
+
+		refresh_chart(star1_level,star2_level,current_star1_name,current_star2_name,current_type1,current_type2,0);
 
 
 		//new 04/20/2020
@@ -361,11 +581,13 @@ for (var i = 0; i < combo_time_per.length; i++) {
 			highest = (highest*100).toFixed(2);
 			star1_level = (Math.floor(index / 10) ) + 1 ;
 			star2_level = (index % 10) + 1;
-			results += "<div class='card text-white bg-dark'> <img src='asset/taptoptoolbg_result_cost.jpg' class='card-img-top'><div class='card-body'><p class='h6'>The best possible combination (in <b>" + custom_time + "</b> seconds) is <b><font color='" + color1 +"'>" + star1_name +  "</font></b> Skill Level <b>" + star1_level + "</b> and <b><font color='" + color2 + "'>" + star2_name + "</font></b> Skill Level <b>" + star2_level + "</b> with an average percentage of <b style=color:#FFE082><i>" + highest + "%</b></i></p></div></div><br />";	
+			results += "<div class='card text-white bg-dark'> <img src='asset/taptoptoolbg_result_cost.jpg' class='card-img-top'><div class='card-body'><p class='h6'>The best possible combination (in <b>" + custom_time + "</b> seconds) is <b><font color='" + color1 +"'>" + star1_name +  "</font></b> Skill Level <b>" + star1_level + "</b> and <b><font color='" + color2 + "'>" + star2_name + "</font></b> Skill Level <b>" + star2_level + "</b> with an average percentage of <b style=color:#FFE082><i>" + highest + "%</b></i></p><br><a class='btn btn-warning rounded-pill' href='javascript:show_chart_click(" + star1_level + "," + star2_level + ");' role='button'><strong>View Skill Time Graph</strong> <i class='fas fa-chart-bar'></i></a></div></div><br />";	
 			results += "<table class = 'table table-sm' style=text-align:center><tr><th class='bg-warning' >" + custom_time + " Seconds</th></tr>" +
 			"<tr class='table-secondary'><td>" + combo_time[index][6] + " Seconds</td></tr>"+
 			"<tr class='table-secondary'><td>" + (combo_time_per[index][6]*100).toFixed(2) + "%</td></tr>" +
 			"</table>";
+
+			refresh_chart(star1_level,star2_level,current_star1_name,current_star2_name,current_type1,current_type2,0);
 		}
 		//end of new 
 
@@ -388,7 +610,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 			s1_level = (Math.floor(s1 / 10) ) + 1;
 			s12_level = (s1_index % 10) + 1;
 
-			s1_table += "<tr><td rowspan='2' style=padding-top:1em><b>LV"+ s1_level +"</b></td><td rowspan='2' style=padding-top:1em><b>LV" + s12_level + "</b></td><td>" + combo_time[s1_index][0] + " Seconds</td><td>" + combo_time[s1_index][1] + " Seconds</td><td>" + combo_time[s1_index][2] + " Seconds</td><td>" + combo_time[s1_index][3] + " Seconds</td><td>" + combo_time[s1_index][4] + " Seconds</td><td>" + combo_time[s1_index][5] + " Seconds</td><td rowspan='2' style=color:#FFE082;padding-top:1em><b><i>" + (ave_per[s1_index]*100).toFixed(2) + "%</b></i></td></tr>";
+			s1_table += "<tr><td rowspan='2' style=padding-top:1em><b>LV"+ s1_level +"</b></td><td rowspan='2' style=padding-top:1em><b>LV" + s12_level + "</b></td><td>" + combo_time[s1_index][0] + " Seconds</td><td>" + combo_time[s1_index][1] + " Seconds</td><td>" + combo_time[s1_index][2] + " Seconds</td><td>" + combo_time[s1_index][3] + " Seconds</td><td>" + combo_time[s1_index][4] + " Seconds</td><td>" + combo_time[s1_index][5] + " Seconds</td><td rowspan='2' style=padding-top:1em><b><i><a class='btn btn-warning btn-sm' href='javascript:show_chart_click(" + s1_level + "," + s12_level + ");' role='button'><strong>" + (ave_per[s1_index]*100).toFixed(2) + "%</strong></a></b></i></td></tr>";
 
 			s1_table += "<tr><td>" + (combo_time_per[s1_index][0]*100).toFixed(2) + "%</td><td>" + (combo_time_per[s1_index][1]*100).toFixed(2) + "%</td><td>" + (combo_time_per[s1_index][2]*100).toFixed(2) + "%</td><td>" + (combo_time_per[s1_index][3]*100).toFixed(2) + " %</td><td>" + (combo_time_per[s1_index][4]*100).toFixed(2) + " %</td><td>" + (combo_time_per[s1_index][5]*100).toFixed(2) + " %</td></tr>";
 
@@ -418,7 +640,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 			s21_level = (Math.floor(s2_index / 10) ) + 1;
 			s2_level = s2 + 1;
 
-			s2_table += "<tr><td rowspan='2' style=padding-top:1em><b>LV"+ s2_level +"</b></td><td rowspan='2' style=padding-top:1em><b>LV" + s21_level + "</b></td><td>" + combo_time[s2_index][0] + " Seconds</td><td>" + combo_time[s2_index][1] + " Seconds</td><td>" + combo_time[s2_index][2] + " Seconds</td><td>" + combo_time[s2_index][3] + " Seconds</td><td>" + combo_time[s2_index][4] + " Seconds</td><td>" + combo_time[s2_index][5] + " Seconds</td><td rowspan='2' style=color:#FFE082;padding-top:1em><b><i>" + (ave_per[s2_index]*100).toFixed(2) + "%</b></i></td></tr>";
+			s2_table += "<tr><td rowspan='2' style=padding-top:1em><b>LV"+ s2_level +"</b></td><td rowspan='2' style=padding-top:1em><b>LV" + s21_level + "</b></td><td>" + combo_time[s2_index][0] + " Seconds</td><td>" + combo_time[s2_index][1] + " Seconds</td><td>" + combo_time[s2_index][2] + " Seconds</td><td>" + combo_time[s2_index][3] + " Seconds</td><td>" + combo_time[s2_index][4] + " Seconds</td><td>" + combo_time[s2_index][5] + " Seconds</td><td rowspan='2' style=color:#FFE082;padding-top:1em><b><i><a class='btn btn-warning btn-sm' href='javascript:show_chart_click(" + s21_level + "," + s2_level + ");' role='button'><strong>" + (ave_per[s2_index]*100).toFixed(2) + "%</strong></a></b></i></td></tr>";
 
 			s2_table += "<tr><td>" + (combo_time_per[s2_index][0]*100).toFixed(2) + "%</td><td>" + (combo_time_per[s2_index][1]*100).toFixed(2) + "%</td><td>" + (combo_time_per[s2_index][2]*100).toFixed(2) + "%</td><td>" + (combo_time_per[s2_index][3]*100).toFixed(2) + " %</td><td>" + (combo_time_per[s2_index][4]*100).toFixed(2) + " %</td><td>" + (combo_time_per[s2_index][5]*100).toFixed(2) + " %</td></tr>";
 
@@ -461,7 +683,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 				s1_level = (Math.floor(s1 / 10) ) + 1;
 				s12_level = (s1_index % 10) + 1;
 
-				s1_table += "<tr><td rowspan='2' style=padding-top:1em><b>LV"+ s1_level +"</b></td><td rowspan='2' style=padding-top:1em><b>LV" + s12_level + "</b></td><td>" + combo_time[s1_index][6] + " Seconds</td><td rowspan='2' style=padding-top:1em;color:#FFE082><b><i>" + (combo_time_per[s1_index][6]*100).toFixed(2) + "%</b></i></td></tr>";
+				s1_table += "<tr><td rowspan='2' style=padding-top:1em><b>LV"+ s1_level +"</b></td><td rowspan='2' style=padding-top:1em><b>LV" + s12_level + "</b></td><td>" + combo_time[s1_index][6] + " Seconds</td><td rowspan='2' style=padding-top:1em;color:#FFE082><b><i><a class='btn btn-warning btn-sm' href='javascript:show_chart_click(" + s1_level + "," + s12_level + ");' role='button'><strong>" + (combo_time_per[s1_index][6]*100).toFixed(2) + "%</b></i></strong></a></td></tr>";
 
 				s1_table += "<tr><td>" + (combo_time_per[s1_index][6]*100).toFixed(2) + "%</td></tr>";
 
@@ -491,7 +713,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 				s21_level = (Math.floor(s2_index / 10) ) + 1;
 				s2_level = s2 + 1;
 
-				s2_table += "<tr><td rowspan='2' style=padding-top:1em><b>LV"+ s2_level +"</b></td><td rowspan='2' style=padding-top:1em><b>LV" + s21_level + "</b></td><td>" + combo_time[s2_index][6] + " Seconds</td><td rowspan='2' style=padding-top:1em;color:#FFE082><b><i>" + (combo_time_per[s2_index][6]*100).toFixed(2) + "%</b></i></td></tr>";
+				s2_table += "<tr><td rowspan='2' style=padding-top:1em><b>LV"+ s2_level +"</b></td><td rowspan='2' style=padding-top:1em><b>LV" + s21_level + "</b></td><td>" + combo_time[s2_index][6] + " Seconds</td><td rowspan='2' style=padding-top:1em><b><i><a class='btn btn-warning btn-sm' href='javascript:show_chart_click(" + s21_level + "," + s2_level + ");' role='button'><strong>" + (combo_time_per[s2_index][6]*100).toFixed(2) + "%</b></i></strong></a></td></tr>";
 
 				s2_table += "<tr><td>" + (combo_time_per[s2_index][6]*100).toFixed(2) + "%</td></tr>";
 
@@ -520,7 +742,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 				s1_level = (Math.floor(s1 / 10) ) + 1;
 				s12_level = s + 1;
 
-				s1_table += "<tr><td rowspan='2' style=padding-top:1em><b>LV"+ s1_level +"</b></td><td rowspan='2' style=padding-top:1em><b>LV" + s12_level + "</b></td><td>" + combo_time[s+s1][0] + " Seconds</td><td>" + combo_time[s+s1][1] + " Seconds</td><td>" + combo_time[s+s1][2] + " Seconds</td><td>" + combo_time[s+s1][3] + " Seconds</td><td>" + combo_time[s+s1][4] + " Seconds</td><td>" + combo_time[s+s1][5] + " Seconds</td><td rowspan='2' style=padding-top:1em;color:#FFE082><b><i>" + (ave_per[s+s1]*100).toFixed(2) + "%</b></i></td></tr>";
+				s1_table += "<tr><td rowspan='2' style=padding-top:1em><b>LV"+ s1_level +"</b></td><td rowspan='2' style=padding-top:1em><b>LV" + s12_level + "</b></td><td>" + combo_time[s+s1][0] + " Seconds</td><td>" + combo_time[s+s1][1] + " Seconds</td><td>" + combo_time[s+s1][2] + " Seconds</td><td>" + combo_time[s+s1][3] + " Seconds</td><td>" + combo_time[s+s1][4] + " Seconds</td><td>" + combo_time[s+s1][5] + " Seconds</td><td rowspan='2' style=padding-top:1em;><b><i><a class='btn btn-warning btn-sm' href='javascript:show_chart_click(" + s1_level + "," + s12_level + ");' role='button'><strong>" + (ave_per[s+s1]*100).toFixed(2) + "%<strong></a></b></i></td></tr>";
 
 				s1_table += "<tr><td>" + (combo_time_per[s+s1][0]*100).toFixed(2) + "%</td><td>" + (combo_time_per[s+s1][1]*100).toFixed(2) + "%</td><td>" + (combo_time_per[s+s1][2]*100).toFixed(2) + "%</td><td>" + (combo_time_per[s+s1][3]*100).toFixed(2) + "%</td><td>" + (combo_time_per[s+s1][4]*100).toFixed(2) + "%</td><td>" + (combo_time_per[s+s1][5]*100).toFixed(2) + "%</td></tr>";
 			}
@@ -530,7 +752,7 @@ for (var i = 0; i < combo_time_per.length; i++) {
 
 		}
 
-		s1_table += "</table></div></div>";
+		s1_table += "</table></div></div><br> <div id='centering'> <a class='btn btn-warning rounded-pill' href='#bestResult' role='button'><i class='fas fa-angle-double-up'></i><strong> Back to Summary</strong></a> </div><br> ";
 
 
 
