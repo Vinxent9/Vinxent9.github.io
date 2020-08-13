@@ -191,8 +191,8 @@
     				$('html, body').animate({
 				        scrollTop: $("#line_chart").offset().top
 				    }, 1000);
-    			}
-    			  
+				}
+
 			}
 
 			function show_chart_click(star1_level, star2_level){
