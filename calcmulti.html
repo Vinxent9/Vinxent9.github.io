@@ -160,12 +160,20 @@
 				<br>
 
 				<div id="centering">
-					<button type="button" class="btn btn-warning rounded-pill" id="calculate_btn" onclick="calculate();" value="Calculate Best Match" disabled>Calculate Best Match <i class="fas fa-angle-double-right"></i> </button>
+					<button type="button" class="btn btn-warning rounded-pill" id="calculate_btn" onclick="calculate();" value="Calculate Best Match" disabled><strong>Calculate Best Match </strong> <i class="fas fa-angle-double-right"></i> </button>
 				</div>	
 
 				<div id="bestResult"></div>
 			
 				<div id="resulttable"></div>
+
+				<div id="centering">
+					<div id="line_chart" style="display: none">
+							<canvas id="myChart" width="800" height="200"></canvas>	
+					</div>
+				</div>
+
+
 			</div>
 		</div>
 	</div>
@@ -173,6 +181,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 	<script src="js/calc_3star.js"></script>
 </body>
 

@@ -4,6 +4,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/all.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
     <title>TapTop Archive</title>
 </head>
 <body>
@@ -33,30 +34,31 @@
                     </div>
                     <div class="card-body bg-dark text-white text-center">
                         <span class="badge badge-info badge-pill">Updates</span><br>
-                        <i class="fas fa-caret-right"></i><span class="font-weight-bold"> Season 3 Opened Permanently</span><br><br>
+                        <i class="fas fa-caret-right" style="color: #FFE082;"></i><span class="font-weight-bold"><a href="#" data-toggle="modal" data-target="#updateModal" style="color: #FFE082;"> Season 10 Opened</span></a><br>
+                        <i class="fas fa-caret-right" style="color: #FFE082;"></i><span class="font-weight-bold"><a href="#" data-toggle="modal" data-target="#updateModal2" style="color: #FFE082;"> 6 New Songs Added</span></a><br><br>
 
                         <span class="badge badge-success badge-pill">Pickup Lineup</span><br>
                         <!-- <i class="fas fa-caret-right"></i> New Pickup Cast : Nicol, Asura, Mary, Joy</li> <br> -->
                         
                             <table id ="centering">
                                 <tr>
-                                    <td> <img src="asset/pixel/nicol.png" alt="..."> </td>
-                                    <td> <img src="asset/pixel/asura.png" alt="..."></td>
-                                    <td> <img src="asset/pixel/mary.png" alt="..."></td>
-                                    <td> <img src="asset/pixel/joy.png" alt="..."></td>
+                                    <td> <img src="asset/pixel/kermilla.png" alt="..."> </td>
+                                    <td> <img src="asset/pixel/franken.png" alt="..."></td>
+                                    <td> <img src="asset/pixel/veromica.png" alt="..."></td>
+                                    <td> <img src="asset/pixel/aresmus.png" alt="..."></td>
                                 </tr>
                                 <tr>
                                     <td style="padding-left: 1em;">
-                                        <span class="badge badge-pill" style="background-color:#9DBFF9;color: #292929;">5 <i class="fas fa-star"></i> Nicol</span>
+                                        <span class="badge badge-pill" style="background-color:#9DBFF9;color: #292929;">5 <i class="fas fa-star"></i> Kermilla</span>
                                     </td>
                                     <td style="padding-left: 1em;">
-                                        <span class="badge badge-pill" style="background-color:#EF9A9A;color: #292929;">5 <i class="fas fa-star"></i> Asura</span>
+                                        <span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">5 <i class="fas fa-star"></i> Franken</span>
                                     </td>
                                     <td style="padding-left: 1em;">
-                                        <span class="badge badge-pill" style="background-color:#9DBFF9;color: #292929;">4 <i class="fas fa-star"></i> Mary</span>
+                                        <span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">4 <i class="fas fa-star"></i> Veromica</span>
                                     </td>
                                     <td style="padding-left: 1em;">
-                                        <span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">4 <i class="fas fa-star"></i> Joy</span>
+                                        <span class="badge badge-pill" style="background-color:#EF9A9A;color: #292929;">4 <i class="fas fa-star"></i> Aresmus</span>
                                     </td>
                                 </tr>
                             </table><br>
@@ -69,10 +71,8 @@
                        
 
                         <span class="badge badge-warning badge-pill">Events</span><br>
-                        <span class="badge badge-danger badge-pill">End Date : 13-August-2020</span><br>
-                        <i class="fas fa-caret-right"></i><span class="font-weight-bold"> Marble Event with Dorothy</span> </li> <br><br>
                         <span class="badge badge-danger badge-pill">End Date : 27-August-2020</span><br>
-                        <i class="fas fa-caret-right"></i><span class="font-weight-bold"> Refund Event with Officy</span> </li> <br>
+                        <i class="fas fa-caret-right" style="color: #FFE082;"></i><span class="font-weight-bold"><a href="#" data-toggle="modal" data-target="#eventModal" style="color: #FFE082;"> Veromica Scout Event </span></a>  <br>
                     </div>
                 </div>
                 
@@ -92,6 +92,9 @@
                       </div>
                       <div class="carousel-item">
                         <img src="asset/banner/3.jpg" class="d-block w-100 rounded" alt="banner3">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="asset/banner/4.jpg" class="d-block w-100 rounded" alt="banner3">
                       </div>
                     </div>
                     <a class="carousel-control-prev" href="#mainbanner" role="button" data-slide="prev">
@@ -156,7 +159,130 @@
 
             </div>
 
-            
+  
+        <!-- Event Modal -->
+        <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content text-white" style="background-color:#292929;">
+                    <div class="modal-body">
+
+                        <div id ="centering">
+                            <h5><strong>Refund Event with Officy</strong></h5>
+                            <span class="badge badge-danger badge-pill">End Date : 27-August-2020</span><br><br>
+                        </div>
+                        
+                        <img class="rounded" src="asset/modalimg/1.png" width="100%"> <br><br>
+                        <img class="rounded" src="asset/modalimg/3.png" width="100%"><br><br>
+                        <img class="rounded" src="asset/modalimg/2.png" width="100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- End of Event Modal -->
+
+        <!-- update Modal -->
+        <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content text-white" style="background-color:#292929;">
+                    <div class="modal-body">
+
+                        <div id ="centering">
+                            <h5><strong>Vampire's Mansion Opened</strong></h5><br>
+                        
+
+                            <img class="rounded" src="asset/modalimg/4.png" width="100%"><br><br>
+                                
+                            <div class="card border-dark">
+                                <h5 class="card-header bg-warning font-weight-bold text-dark"><i class="fas fa-star"></i> Exclusive Reward</h5>
+                                <div class="card-body bg-dark text-white">
+                                    <table id="centering">
+                                        <tr>
+                                            <td><img src="asset/modalimg/eternal.png" width="50%"></td>
+                                            <td><img src="asset/modalimg/astral.png" width="50%"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge badge-pill" style="background-color:#9DBFF9;color: #292929;">Eternal Memory</span></td>
+                                            <td><span class="badge badge-pill" style="background-color:#EF9A9A;color: #292929;">Astral Supplication</span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>     
+                            
+                        
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- End of update Modal -->
+
+        <!-- update Modal 2 -->
+        <div class="modal fade animate__animated animate__fadeInRight" id="updateModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content text-white" style="background-color:#292929;">
+                    <div class="modal-body">
+
+                        <div id ="centering">
+                            <h5><strong>New Songs</strong></h5><br>
+    
+                            <div class="card border-dark">
+                                <h5 class="card-header bg-warning font-weight-bold text-dark"><i class="fas fa-angle-double-right"></i> Standard Sonic Songs</h5>
+                                <div class="card-body bg-dark text-white">
+                                    <table id="centering">
+                                        <tr>
+                                            <td><img src="asset/modalimg/getoutrmx.png" width="50%"></td>
+                                            <td><img src="asset/modalimg/starfish.png" width="50%"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge badge-pill" style="background-color:#EF9A9A;color: #292929;">Get Out Remix</span></td>
+                                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Starfish</span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="card border-dark">
+                                <h5 class="card-header bg-warning font-weight-bold text-dark"><i class="fas fa-dollar-sign"></i> Paid Sonic Songs</h5>
+                                <div class="card-body bg-dark text-white">
+                                    <table id="centering">
+                                        <tr>
+                                            <td><img src="asset/modalimg/verum.png" width="50%"></td>
+                                            <td><img src="asset/modalimg/littledream.png" width="50%"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Verum - oremus</span></td>
+                                            <td><span class="badge badge-pill" style="background-color:#9DBFF9;color: #292929;">A Little Dream</span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="card border-dark">
+                                <h5 class="card-header bg-warning font-weight-bold text-dark"><i class="fas fa-star"></i> Adventure Exclusive Reward</h5>
+                                <div class="card-body bg-dark text-white">
+                                    <table id="centering">
+                                        <tr>
+                                            <td><img src="asset/modalimg/astral.png" width="50%"></td>
+                                            <td><img src="asset/modalimg/eternal.png" width="50%"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge badge-pill" style="background-color:#EF9A9A;color: #292929;">Astral Supplication</span></td>
+                                            <td><span class="badge badge-pill" style="background-color:#9DBFF9;color: #292929;">Eternal Memory</span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>     
+                            
+                        
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- End of update Modal 2 -->
 
         </div>
     </div>

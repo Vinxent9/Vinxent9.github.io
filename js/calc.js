@@ -1,5 +1,5 @@
 	
-
+				//chart section
 				var ctx = document.getElementById('myChart').getContext('2d');
 				var label_time = new Array();
 				for(var i=0;i<181;i++){
@@ -141,17 +141,17 @@
 
 				switch (type1) {
 				  case "Dancer":
-				    myChart.data.datasets[0].backgroundColor = 'rgba(255, 99, 132, 0.2)';
-				    myChart.data.datasets[0].borderColor = 'rgba(255, 99, 132, 1)';
-				    myChart.data.datasets[0].hoverBorderColor = 'rgba(255, 99, 132, 1)';
+				    myChart.data.datasets[0].backgroundColor = 'rgba(239, 154, 154, 1)';
+				    myChart.data.datasets[0].borderColor = 'rgba(239, 154, 154, 1)';
+				    myChart.data.datasets[0].hoverBorderColor = 'rgba(239, 154, 154, 1)';
 				    break;
 				  case "Vocal":
-				    myChart.data.datasets[0].backgroundColor = 'rgba(54, 162, 235, 0.2)';
-				    myChart.data.datasets[0].borderColor = 'rgba(54, 162, 235, 1)';
-				    myChart.data.datasets[0].hoverBorderColor = 'rgba(54, 162, 235, 1)';
+				    myChart.data.datasets[0].backgroundColor = 'rgba(157, 191, 249, 1)';
+				    myChart.data.datasets[0].borderColor = 'rgba(157, 191, 249, 1)';
+				    myChart.data.datasets[0].hoverBorderColor = 'rgba(157, 191, 249, 1)';
 				    break;
 				  case "Session":
-				    myChart.data.datasets[0].backgroundColor = 'rgba(165, 214, 167, 0.2)';
+				    myChart.data.datasets[0].backgroundColor = 'rgba(165, 214, 167, 1)';
 				    myChart.data.datasets[0].borderColor = 'rgba(165, 214, 167, 1)';
 				    myChart.data.datasets[0].hoverBorderColor = 'rgba(165, 214, 167, 1)';
 				    break;
@@ -160,17 +160,17 @@
 
 				switch (type2) {
 				  case "Dancer":
-				    myChart.data.datasets[1].backgroundColor = 'rgba(255, 99, 132, 0.2)';
-				    myChart.data.datasets[1].borderColor = 'rgba(255, 99, 132, 1)';
-				    myChart.data.datasets[1].hoverBorderColor = 'rgba(255, 99, 132, 1)';
+				    myChart.data.datasets[1].backgroundColor = 'rgba(239, 154, 154, 1)';
+				    myChart.data.datasets[1].borderColor = 'rgba(239, 154, 154, 1)';
+				    myChart.data.datasets[1].hoverBorderColor = 'rgba(239, 154, 154, 1)';
 				    break;
 				  case "Vocal":
-				    myChart.data.datasets[1].backgroundColor = 'rgba(54, 162, 235, 0.2)';
-				    myChart.data.datasets[1].borderColor = 'rgba(54, 162, 235, 1)';
-				    myChart.data.datasets[1].hoverBorderColor = 'rgba(54, 162, 235, 1)';
+				    myChart.data.datasets[1].backgroundColor = 'rgba(157, 191, 249, 1)';
+				    myChart.data.datasets[1].borderColor = 'rgba(157, 191, 249, 1)';
+				    myChart.data.datasets[1].hoverBorderColor = 'rgba(157, 191, 249, 1)';
 				    break;
 				  case "Session":
-				    myChart.data.datasets[1].backgroundColor = 'rgba(165, 214, 167, 0.2)';
+				    myChart.data.datasets[1].backgroundColor = 'rgba(165, 214, 167, 1)';
 				    myChart.data.datasets[1].borderColor = 'rgba(165, 214, 167, 1)';
 				    myChart.data.datasets[1].hoverBorderColor = 'rgba(165, 214, 167, 1)';
 				    break;
@@ -198,9 +198,8 @@
 			function show_chart_click(star1_level, star2_level){
 				refresh_chart(star1_level,star2_level,current_star1_name,current_star2_name,current_type1,current_type2,1);
 			}
-
-
-
+			//end of chart section
+		
 
 var ave_per = new Array(100);
 var combo_time = new Array(100);
