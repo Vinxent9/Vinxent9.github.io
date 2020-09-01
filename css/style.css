@@ -33,3 +33,66 @@ body{
     color:white;
     margin: auto;
 }
+
+.sidebar{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 15em;
+}
+
+@keyframes slideInLeft{
+    to{
+        background: #9DBFF9;
+    }
+}
+
+
+@keyframes vocalanim{
+    to{
+        background: #9DBFF9;
+    }
+}
+
+@keyframes danceranim{
+    to{
+        background: #EF9A9A;
+    }
+}
+
+@keyframes sessionanim{
+    to{
+        background: #A5D6A7;
+    }
+}
+
+.btnvc:hover{
+    display: inline-block;
+    animation:vocalanim;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    color: black;
+}
+
+
+
+.btndc:hover{
+    display: inline-block;
+    animation:danceranim; 
+    animation-duration: 0.5s; 
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    color: black;
+}
+
+.btnss:hover{
+    display: inline-block;
+    animation:sessionanim; 
+    animation-duration: 0.5s; 
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    color: black;
+}
+
+
+/* animate__slideInLeft */
