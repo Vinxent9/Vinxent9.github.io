@@ -34,20 +34,14 @@ body{
     margin: auto;
 }
 
-.sidebar{
-    position: -webkit-sticky;
+/* .sidebar{
     position: sticky;
     top: 15em;
-}
-
-@keyframes slideInLeft{
-    to{
-        background: #9DBFF9;
-    }
-}
+} */
 
 
-@keyframes vocalanim{
+
+/* @keyframes vocalanim{
     to{
         background: #9DBFF9;
     }
@@ -71,7 +65,7 @@ body{
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
-    color: black;
+    color: #292929;
 }
 
 
@@ -82,7 +76,7 @@ body{
     animation-duration: 0.5s; 
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
-    color: black;
+    color: #292929;
 }
 
 .btnss:hover{
@@ -91,8 +85,30 @@ body{
     animation-duration: 0.5s; 
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
-    color: black;
+    color: #292929;
+} */
+
+.btnvc{
+    background: #9DBFF9;
+    color: #292929;
 }
 
+.btndc{
+    background: #EF9A9A;
+    color: #292929;
+}
+
+.btnss{
+    background: #A5D6A7;
+    color: #292929;
+}
+
+.navttl{
+    color: white;
+}
+
+.navttl:hover{
+    color: #ffc815;
+}
 
 /* animate__slideInLeft */

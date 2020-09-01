@@ -8,8 +8,36 @@
     <title>TapTop Archive | Song List</title>
 </head>
 <body>
-    
-    <img src="asset/mainbgv2.jpg" alt="mainimg" width="100%" height="100%"><br><br>
+
+    <!-- navbar section -->
+    <nav class="navbar sticky-top navbar-expand-lg bg-dark">
+        <a class="navbar-brand font-weight-bold navttl" href="index.html"><img src="asset/brandicon.png" width="64" height="64">TapTop Archive</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link btn btn-dark" href="tier.html"><i class="fas fa-list-ul"></i> Tier List</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link btn btn-dark" href="tier.html"><i class="fas fa-music"></i> Song List</a>
+            </li> -->
+            <li class="nav-item dropdown">
+                <a class="btn btn-dark nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-calculator"></i>  X2 Calculator
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-warning" href="calculator.html"><i class="fas fa-chevron-right"></i> 2 Stars Pair</a>
+                    <a class="dropdown-item text-warning" href="calcmulti.html"><i class="fas fa-chevron-right"></i> 3 Stars Pair</a>
+            </li>
+        </div>
+    </nav>
+
+    <!-- end of navbar -->
+
+    <img src="asset/songlist.jpg" alt="mainimg" width="100%" height="100%"><br><br>
 
 
       <!-- vocal color code : #9DBFF9
@@ -18,18 +46,64 @@
 
     <div class = "container">
         <div class="row">
-            <div class= "col-md-2">
-                <div class="sidebar">
-                    <button type="button" id="vocal" class="btn btn-dark btn-block btnvc"><strong>Vocal</strong></button>
-                    <button type="button" id="dancer" class="btn btn-dark btn-warning btn-block btndc"><strong>Dancer</strong></button>
-                    <button type="button" id="session" class="btn btn-dark btn-block btnss"><strong>Session</strong></button>
+            <div class= "col-md-3">
+                <div class="sidebar" style="padding: 1em;">
+
+                    <div id="centering">
+                         <h6 class="text-white"><i class="fas fa-cog text-white"></i> <strong> Song Option</strong> </h6>
+                    </div>
+
+                    <br>
+
+                    <!-- attribute button  -->
+                    <button type="button" id="vocal" class="btn btn-block btnvc"><strong>Vocal</strong></button>
+                    <button type="button" id="dancer" class="btn btn-block btndc"><strong>Dancer</strong></button>
+                    <button type="button" id="session" class="btn btn-block btnss"><strong>Session</strong></button>
+                    <!-- end of attribute button  -->
+                    
+                    <br>
+                    
+                    <!-- source radio section -->
+                    <table class="table table-sm table-borderless">
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="idradio1" name="customRadio" class="custom-control-input" checked>
+                                    <label class="custom-control-label text-white" for="idradio1">All Songs</label>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="idradio2" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label text-white" for="idradio2">Shop</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="idradio3" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label text-white" for="idradio3">Free</label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="idradio4" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label text-white" for="idradio4">Adventure</label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- end of source radio section -->
+
                 </div>
             </div>
            
            
-            <div class="col-md-10">
+            <div class="col-md-9">
                
-               
+                <!-- dropdown for sorting if any -->
                 <div class="dropdown" style="position: absolute;right: 0px;">
                     <button class="btn btn-warning dropdown-toggle" type="button" id="sortopt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <strong>Sort Option</strong>
@@ -40,9 +114,11 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
+                <!-- dropdown for sorting if any -->
 
                 <br><br>
                 <div id="centering">
+                    <!-- song table -->
                     <table class="table table-borderless">
                         <tr>
                             <td><img src="asset/modalimg/verum.png" width="75%"></td>
@@ -126,6 +202,7 @@
                             <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
                         </tr>
                     </table>
+                    <!-- end of song table -->
                 </div>
                 
                 
@@ -138,7 +215,7 @@
     
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
     </script>
 </body>
