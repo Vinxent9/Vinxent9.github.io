@@ -41,7 +41,8 @@ body{
 
 
 
-/* @keyframes vocalanim{
+/* 
+@keyframes vocalanim{
     to{
         background: #9DBFF9;
     }
@@ -104,3 +105,5 @@ body{
 }
 
 /* animate__slideInLeft */
+
+/* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
