@@ -6,6 +6,9 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
     <title>TapTop Archive</title>
+    <link rel="icon" 
+      type="image/png" 
+      href="asset/fav2.png">
 </head>
 <body>
     
@@ -42,23 +45,23 @@
                         
                             <table id ="centering">
                                 <tr>
-                                    <td> <img src="asset/pixel/kermilla.png" alt="..."> </td>
-                                    <td> <img src="asset/pixel/franken.png" alt="..."></td>
-                                    <td> <img src="asset/pixel/veromica.png" alt="..."></td>
-                                    <td> <img src="asset/pixel/aresmus.png" alt="..."></td>
+                                    <td> <img src="asset/pixel/paris.png" alt="..."> </td>
+                                    <td> <img src="asset/pixel/trasher.png" alt="..."></td>
+                                    <td> <img src="asset/pixel/dorothy.png" alt="..."></td>
+                                    <td> <img src="asset/pixel/tallia.png" alt="..."></td>
                                 </tr>
                                 <tr>
                                     <td style="padding-left: 1em;">
-                                        <span class="badge badge-pill" style="background-color:#9DBFF9;color: #292929;">5 <i class="fas fa-star"></i> Kermilla</span>
+                                        <span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">5 <i class="fas fa-star"></i> Paris Upton</span>
                                     </td>
                                     <td style="padding-left: 1em;">
-                                        <span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">5 <i class="fas fa-star"></i> Franken</span>
+                                        <span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">5 <i class="fas fa-star"></i> Dr. Trasher</span>
                                     </td>
                                     <td style="padding-left: 1em;">
-                                        <span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">4 <i class="fas fa-star"></i> Veromica</span>
+                                        <span class="badge badge-pill" style="background-color:#EF9A9A;color: #292929;">4 <i class="fas fa-star"></i> Dorothy</span>
                                     </td>
                                     <td style="padding-left: 1em;">
-                                        <span class="badge badge-pill" style="background-color:#EF9A9A;color: #292929;">4 <i class="fas fa-star"></i> Aresmus</span>
+                                        <span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">4 <i class="fas fa-star"></i> Tallia</span>
                                     </td>
                                 </tr>
                             </table><br>
@@ -72,7 +75,9 @@
 
                         <span class="badge badge-warning badge-pill">Events</span><br>
                         <span class="badge badge-danger badge-pill">End Date : 27-August-2020</span><br>
-                        <i class="fas fa-caret-right" style="color: #FFE082;"></i><span class="font-weight-bold"><a href="#" data-toggle="modal" data-target="#eventModal" style="color: #FFE082;"> Veromica Scout Event </span></a>  <br>
+                        <i class="fas fa-caret-right" style="color: #FFE082;"></i><span class="font-weight-bold"><a href="#" data-toggle="modal" data-target="#eventModal" style="color: #FFE082;"> Veromica Scout Event </span></a>  <br><br>
+                        <span class="badge badge-danger badge-pill">End Date : 24-September-2020</span><br>
+                        <i class="fas fa-caret-right" style="color: #FFE082;"></i><span class="font-weight-bold"><a href="#" data-toggle="modal" data-target="#eventModal2" style="color: #FFE082;"> Kermilla Play Event </span></a>  <br>
                     </div>
                 </div>
                 
@@ -134,6 +139,26 @@
                       <a href="tier.html" type="button" class="btn btn-warning"><strong>Tier List <i class="fas fa-caret-right"></i></a></strong>
                     </div>
                 </div>
+                
+                <br>
+
+                <div class="card border-dark">
+                    <img src="asset/songlist_thumb_v2.jpg" class="card-img-top" alt="x2image">
+                    <div class="card-body bg-dark text-white">
+                      <p class="card-text">Browse through all songs in Tapsonic Top </p>
+                      <a href="songlist.html" type="button" class="btn btn-warning"><strong>Song List <i class="fas fa-caret-right"></i></a></strong>
+                    </div>
+                </div>
+                
+                <br>
+
+                <div class="card border-dark">
+                    <img src="asset/skillsyncthumb.jpg" class="card-img-top" alt="x2image">
+                    <div class="card-body bg-dark text-white">
+                      <p class="card-text">Skill Sync </p>
+                      <a href="#" type="button" class="btn btn-warning"><strong>Skill Sync <i class="fas fa-caret-right"></i></a></strong>
+                    </div>
+                </div>
 
             </div>
 
@@ -179,6 +204,24 @@
             </div>
         </div>
          <!-- End of Event Modal -->
+
+        <!-- Event Modal2 -->
+        <div class="modal fade" id="eventModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content text-white" style="background-color:#292929;">
+                    <div class="modal-body">
+
+                        <div id ="centering">
+                            <h5><strong>Kermilla Play Event</strong></h5>
+                            <span class="badge badge-danger badge-pill">End Date : 24-September-2020</span><br><br>
+                        </div>
+                        
+                        <img class="rounded" src="asset/modalimg/5.png" width="100%"> <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- End of Event Modal2 -->
 
         <!-- update Modal -->
         <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -292,7 +335,7 @@
     
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

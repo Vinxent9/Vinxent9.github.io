@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
     <title>TapTop Archive | Song List</title>
 </head>
-<body onload="hidefunct()">
+<body>
 
-    <!-- navbar section
+    
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand font-weight-bold navttl" href="index.html"><img src="asset/brandicon.png" width="64" height="64">TapTop Archive</a>
+        <a class="navbar-brand font-weight-bold navttl" href="index.html"><img src="asset/brandicon2.png" width="64" height="64">TapTop Archive</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,7 +22,7 @@
                 <a class="nav-link btn btn-dark text-white" href="tier.html"><i class="fas fa-list-ul"></i> Tier List</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn btn-dark" href="tier.html"><i class="fas fa-music"></i> Song List</a>
+                <a class="nav-link btn btn-dark disabled" href="tier.html"><i class="fas fa-music"></i> Song List</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="btn btn-dark nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,7 +35,7 @@
         </div>
     </nav>
 
-    end of navbar -->
+    
 
     <img src="asset/songlist.jpg" alt="mainimg" width="100%" height="100%"><br><br>
 
@@ -49,17 +49,14 @@
             <div class= "col-md-3">
                 <div class="sidebar">
 
-                    <div id="centering">
-                        <button type="button" class="btn btn-block btn-warning rounded-pill" onclick="switchOption()"><i class="fas fa-cog"></i> <strong>Song Option</strong></button>
-                        <!-- <h6 class="text-white btn btn-info"><i class="fas fa-cog text-white"></i> <strong> Song Option</strong> </h6> -->
-                    </div>
-
                     <br>
                     <div id="sideoption">
 
                         <div id="centering">
+                            <!-- <h6 class="text-white"><i class="fas fa-cog text-white"></i> <strong> Song Option</strong> </h6> -->
                             <h6 class="font-weight-bold text-white"><i class="fas fa-headphones text-white"></i> Attribute Option</h6>
                             <!-- attribute button  -->
+                            <button type="button" id="allattr" class="btn btn-block btnatr"><strong>All Type</strong></button>
                             <button type="button" id="vocal" class="btn btn-block btnvc"><strong>Vocal</strong></button>
                             <button type="button" id="dancer" class="btn btn-block btndc"><strong>Dancer</strong></button>
                             <button type="button" id="session" class="btn btn-block btnss"><strong>Session</strong></button>
@@ -106,6 +103,17 @@
                             <!-- end of source radio section -->
 
                         </div>
+
+                        <div id="centering">
+                            
+                            <h6 class="font-weight-bold text-white"><i class="fas fa-sort text-white"></i> Sorting Method</h6>
+                            
+                            <select type="button" class="btn btnsort rounded-pill font-weight-bold" id="exampleFormControlSelect1">
+                                <option>Ascending</option>
+                                <option>Descending</option>
+                            </select>
+
+                        </div>
                         
                     </div>
                     
@@ -115,7 +123,11 @@
            
            
             <div class="col-md-9">
-               
+                
+                <!-- search bar -->
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="width: 35%; position: absolute;" >
+                <!-- end of search -->
+
                 <!-- dropdown for sorting if any -->
                 <div class="dropdown" style="position: absolute;right: 0px;">
                     <button class="btn btn-warning dropdown-toggle" type="button" id="sortopt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -130,92 +142,47 @@
                 <!-- dropdown for sorting if any -->
 
                 <br><br>
+                  
                 <div id="centering">
-                    <!-- song table -->
-                    <table class="table table-borderless">
-                        <tr>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                        </tr>
-                        
-                        <tr>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                        </tr>
-                        <tr>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                        </tr>
-                        <tr>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                        </tr>
-                        <tr>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                            <td><img src="asset/modalimg/verum.png" width="75%"></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                            <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Song title</span></td>
-                        </tr>
-                    </table>
-                    <!-- end of song table -->
+                    <div class="table-responsive">
+                        <!-- song table -->
+                        <table class="table table-borderless">
+                            <tr>
+                                <td><img src="asset/modalimg/verum.png" style="width: 75px;height: 75px;"></td>
+                                <td><img src="asset/modalimg/verum.png" style="width: 75px;height: 75px;"></td>
+                                <td><img src="asset/modalimg/verum.png" style="width: 75px;height: 75px;"></td>
+                                <td><img src="asset/modalimg/verum.png" style="width: 75px;height: 75px;"></td>
+                                <td><img src="asset/modalimg/verum.png" style="width: 75px;height: 75px;"></td>
+                                <td><img src="asset/modalimg/verum.png" style="width: 75px;height: 75px;"></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">ASHITA NO A</span></td>
+                                <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">A.I.</span></td>
+                                <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Ask To Winds</span></td>
+                                <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Ask To Winds</span></td>
+                                <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Ask To Winds</span></td>
+                                <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Ask To Winds</span></td>
+                            </tr>
+                            <tr>
+                                <td><img src="asset/modalimg/verum.png" style="width: 75px;height: 75px;"></td>
+                                <td><img src="asset/modalimg/verum.png" style="width: 75px;height: 75px;"></td>
+                                <td><img src="asset/modalimg/verum.png" style="width: 75px;height: 75px;"></td>
+                                <td><img src="asset/modalimg/verum.png" style="width: 75px;height: 75px;"></td>
+                                <td><img src="asset/modalimg/verum.png" style="width: 75px;height: 75px;"></td>
+                                <td><img src="asset/modalimg/verum.png" style="width: 75px;height: 75px;"></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">ASHITA NO AS</span></td>
+                                <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">A.I.</span></td>
+                                <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Ask To Winds</span></td>
+                                <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Ask To Winds</span></td>
+                                <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Ask To Winds</span></td>
+                                <td><span class="badge badge-pill" style="background-color:#A5D6A7;color: #292929;">Ask To Winds</span></td>
+                            </tr>
+                        </table>
+                        <!-- end of song table -->
+                    </div>
+                 
                 </div>
                 
                 
@@ -230,29 +197,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-        //animation purposes
-        function hidefunct(){
-            document.getElementById("sideoption").style.display="none";
-        }
-        
-        const element = document.getElementById("sideoption");
-        element.classList.add('animate__animated', 'animate__slideInLeft');
-        element.style.setProperty('--animate-duration', '0.5s');
-
-        function switchOption() {
-            var disp = document.getElementById("sideoption");
-            if (disp.style.display === "none") 
-            {
-                disp.style.display = "block";
-            } 
-            else 
-            {
-                disp.style.display = "none";   
-            }
-        } 
-        //end of anim
-    </script>
 
 </body>
 </html>
