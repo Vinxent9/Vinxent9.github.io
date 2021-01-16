@@ -308,6 +308,72 @@ body{
     border-color: #FFE082;
 }
 
+.jumbobg{
+    background-image: url(../asset/paralaxbg.jpg);
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-device-width: 720px) {
+    .jumbobg{
+      background-attachment: scroll;
+    }
+}
+
+.jumbobg2{
+    background-image: url(../asset/paralaxbg2.jpg);
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-device-width: 720px) {
+    .jumbobg2{
+      background-attachment: scroll;
+    }
+}
+
+.jumbobgtop{
+    background-image: url(../asset/univbg.jpg);
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-device-width: 720px) {
+    .jumbobgtop{
+      background-attachment: scroll;
+    }
+}
+
+.rhomclip{
+    border: 4px solid white;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    filter: grayscale(1);
+    transition: 0.5s ease;
+}
+.rhomclip:hover{
+
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+    filter: grayscale(0);
+    transition: 0.5s ease;
+}
+
+.eventhov{
+    transition: 0.5s ease
+}
+
+.eventhov:hover{
+    transform: scale(1.2);
+    transition: 0.5s ease
+}
 
 /* end of session anim */
 
